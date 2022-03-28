@@ -20,7 +20,8 @@ const char16_t Stack::pop()
 	{
 		return 0;
 	}
-	return _stack[_position];
+	char16_t data = _stack[_position];
 	_stack[_position] = 0;
 	--_position;
+	return data;
 }
