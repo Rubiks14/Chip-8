@@ -9,6 +9,7 @@ void Chip8::execute_instruction(const Instruction& instruction)
     const unsigned char command_type = instruction.get_type();
     if (CLS == instruction.get_16bit_command())
     {
+        _display.clear();
         std::cout << "Clear screen" << std::endl;
     }
     else if (JUMP == command_type)
@@ -39,6 +40,19 @@ void Chip8::execute_instruction(const Instruction& instruction)
     }
     else if (DRAW == command_type)
     {
+        const char16_t initial_register = _memory.get_index_register();
+        unsigned char x = _registers[instruction.get_x()];
+        unsigned char y = _registers[instruction.get_y()];
+        for (unsigned char i = 0; i < instruction.get_4bit_number(); ++i)
+        {
+            _memory.set_index_register(initial_register + i);
+            _display.set_render_postion(x, y);
+            _display.update_buffer(_memory.read_byte_at_current_index());
+            ++y;
+        }
+        _display.display_buffer_in_console();
+        _display.update();
+        _memory.set_index_register(initial_register);
         std::cout << "Drawing to screen" << std::endl;
     }
 }
@@ -69,9 +83,14 @@ void Chip8::read_program_from_file_to_memory(const std::string filename)
     std::getline(program, data_string);
     for (unsigned char c : data_string)
     {
-        _memory.write_data_at_current_index(c);
+        _memory.write_byte_at_current_index(c);
         _memory.set_index_register(_memory.get_index_register() + 1);
     }
     program.close();
     _memory.set_program_counter(PROGRAM_START);
+}
+
+sf::RenderWindow& Chip8::get_window() 
+{ 
+    return _display.get_window();
 }

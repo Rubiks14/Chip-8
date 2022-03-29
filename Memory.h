@@ -24,7 +24,8 @@ public:
 	void set_program_counter(const char16_t pc);
 	void increment_program_counter();
 
-	void write_data_at_current_index(const unsigned char data);
+	void write_byte_at_current_index(const unsigned char data);
+	const unsigned char read_byte_at_current_index() const;
 
 };
 
