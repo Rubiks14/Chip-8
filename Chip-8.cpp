@@ -51,7 +51,7 @@ void Chip8::execute_instruction(const Instruction& instruction)
             ++y;
         }
         _display.display_buffer_in_console();
-        _display.update();
+        _display.display_buffer_on_screen();
         _memory.set_index_register(initial_register);
         std::cout << "Drawing to screen" << std::endl;
     }

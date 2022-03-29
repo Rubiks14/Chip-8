@@ -45,7 +45,7 @@ void Display::clear()
 	_buffer.fill(0);
 	_window.clear();
 }
-void Display::update()
+void Display::display_buffer_on_screen()
 {
 	for (auto i = 0; i < _buffer.size(); ++i)
 	{

@@ -19,7 +19,7 @@ public:
 	void update_buffer(const unsigned short num_pixels);
 	void display_buffer_in_console() const;
 	void clear();
-	void update();
+	void display_buffer_on_screen();
 };
 
 #endif
