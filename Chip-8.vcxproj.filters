@@ -60,4 +60,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="IBM Logo.ch8">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
 </Project>
