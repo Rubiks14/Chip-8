@@ -167,7 +167,12 @@
     <ClInclude Include="Window.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="BC_test.ch8" />
     <None Include="IBM Logo.ch8" />
+    <None Include="test_opcode.ch8" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="BC_Test.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

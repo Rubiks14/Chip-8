@@ -70,5 +70,16 @@
     <None Include="IBM Logo.ch8">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="BC_test.ch8">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="test_opcode.ch8">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="BC_Test.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>
