@@ -21,7 +21,7 @@ void Timer::tick()
 		_previous_time = now_time;
 	}
 }
-void Timer::set(const unsigned char t)
+void Timer::set(const char16_t t)
 {
 	_timer = t;
 	if (_timer != 0)
@@ -30,7 +30,7 @@ void Timer::set(const unsigned char t)
 	}
 }
 
-const unsigned char Timer::get() const
+const char16_t Timer::get() const
 {
 	return _timer;
 }

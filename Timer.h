@@ -10,13 +10,13 @@ class Timer
 {
 private:
 	std::chrono::time_point<std::chrono::steady_clock> _previous_time;
-	char _timer;
+	char16_t _timer;
 	bool _active;
 public:
-	Timer() : _active{ true }, _timer{ static_cast<unsigned char>(0xF) }, _previous_time{ std::chrono::steady_clock::now() } {}
+	Timer() : _active{ true }, _timer{ static_cast<char16_t>(0xF) }, _previous_time{ std::chrono::steady_clock::now() } {}
 	void tick();
-	void set(const unsigned char t);
-	const unsigned char get() const;
+	void set(const char16_t t);
+	const char16_t get() const;
 };
 
 #endif
